@@ -24,9 +24,16 @@ public class Lecture1 {
     // 2. Then change implementation to find first 10 people
     List<Person> youngPeople = Lists.newArrayList();
 
+    final int limit = 10;
+    int counter = 0;
+
     for(Person person: people){
       if(person.getAge() <= 18){
         youngPeople.add(person);
+        counter++;
+        if(counter == limit){
+          break;
+        }
       }
     }
 
