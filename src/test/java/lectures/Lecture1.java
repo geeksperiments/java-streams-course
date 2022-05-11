@@ -18,10 +18,22 @@ public class Lecture1 {
 
   @Test
   public void imperativeApproach() throws IOException {
+    // how to run the test in maven: mvn -Dtest=Lecture1#imperativeApproach test
     List<Person> people = MockData.getPeople();
     // 1. Find people aged less or equal 18
     // 2. Then change implementation to find first 10 people
+    List<Person> youngPeople = Lists.newArrayList();
 
+    for(Person person: people){
+      if(person.getAge() <= 18){
+        youngPeople.add(person);
+      }
+    }
+
+    for(Person young: youngPeople)
+    {
+      System.out.println(young);
+    }
   }
 
   @Test
